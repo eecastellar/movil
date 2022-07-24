@@ -1,4 +1,6 @@
+import 'package:ejemplo_1/ui/pages/auth/register.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -24,30 +26,46 @@ class _LoginState extends State<Login> {
             children: [
               const CircleAvatar(
                 radius: 80,
-                backgroundImage: NetworkImage(
-                    'https://login.gov/assets/img/login-gov-288x288.png'),
+                backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                backgroundImage: AssetImage('images/logoSena.png'),
               ),
               TextField(
                 controller: controlUser,
-                decoration:
-                    const InputDecoration(labelText: 'Ingrese el Usuario'),
+                decoration: const InputDecoration(labelText: 'Usuario'),
               ),
               TextField(
                 controller: controlPass,
                 obscureText: true,
-                decoration:
-                    const InputDecoration(labelText: 'Ingrese la Contraseña'),
+                decoration: const InputDecoration(labelText: 'Contraseña'),
+              ),
+              const SizedBox(
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.login)),
-                  const SizedBox(
-                    width: 10,
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.toNamed(
+                          'https://www.sena.edu.co/es-co/Paginas/default.aspx');
+                    },
+                    style: TextButton.styleFrom(
+                        primary: Colors.orange,
+                        backgroundColor: Color.fromARGB(255, 247, 246, 245)),
+                    child: Text("Inicio"),
                   ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.app_registration))
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      MaterialPageRoute(builder: (context) => const registro());
+                    },
+                    style: TextButton.styleFrom(
+                        primary: Colors.orange,
+                        backgroundColor: Color.fromARGB(255, 247, 246, 245)),
+                    child: Text("Registrarse"),
+                  ),
                 ],
               )
             ],

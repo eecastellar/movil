@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Mi Primer Programa',
+      title: 'Inicio Sofia',
       debugShowCheckedModeBanner: false,
       routes: {
         '/Principal': (context) => const Principal(),
